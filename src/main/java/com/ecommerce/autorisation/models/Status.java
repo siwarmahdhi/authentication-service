@@ -5,8 +5,8 @@ package com.ecommerce.autorisation.models;
  */
 public enum Status {
 
-    ACTIF("ACTIVE"),
-    INACTIF("INACTIVE");
+    ACTIVE("ACTIVE"),
+    INACTIVE("INACTIVE");
 
     /**
      * Libellé de l'état

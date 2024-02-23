@@ -9,6 +9,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -16,7 +17,7 @@ import java.time.Instant;
 @Builder
 public class UserDto implements Serializable {
 
-    private String id;
+    private Integer id;
     @Size(max = 50)
     private String firstName;
     @Size(max = 50)
@@ -32,4 +33,5 @@ public class UserDto implements Serializable {
     private String createdBy;
     @Size(max = 8)
     private String modifiedBy;
+    private Set<AuthorityDto> authorities;
 }

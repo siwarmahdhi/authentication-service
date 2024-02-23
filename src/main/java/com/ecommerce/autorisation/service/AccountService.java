@@ -1,11 +1,10 @@
 package com.ecommerce.autorisation.service;
 
 import com.ecommerce.autorisation.dto.UserDto;
-import com.ecommerce.autorisation.models.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface AccountService {
 
     /**
      * Méthode pour ajouter un nouveau utilisateur
@@ -24,7 +23,7 @@ public interface UserService {
      * Méthode pour supprimer un utilisateur
      * @param id
      */
-    public void delete(String id);
+    public void delete(Integer id);
 
     /**
      * Ajouter une liste des utilisateurs
@@ -32,4 +31,6 @@ public interface UserService {
      * @return
      */
     public List<UserDto> addUsers(List<UserDto> userDtoList);
+
+    public UserDto loadUserByEmail(String email);
 }

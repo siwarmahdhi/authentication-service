@@ -10,9 +10,9 @@ import org.mapstruct.Named;
 @Mapper(componentModel = "spring")
 public interface UserMapper extends EntityMapper<UserDto, User> {
 
-    @Named("isActif")
-    default boolean isActif(Status status) {
-        return status.equals(Status.ACTIF);
+    @Named("isActive")
+    default boolean isActive(Status status) {
+        return status.equals(Status.ACTIVE);
     }
 
     @Mapping(ignore = true, target = "password")
