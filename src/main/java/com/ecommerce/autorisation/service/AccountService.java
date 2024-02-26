@@ -1,5 +1,6 @@
 package com.ecommerce.autorisation.service;
 
+import com.ecommerce.autorisation.dto.AuthorityDto;
 import com.ecommerce.autorisation.dto.UserDto;
 import com.ecommerce.autorisation.models.User;
 
@@ -13,26 +14,28 @@ public interface AccountService {
      * @param user
      * @return
      */
-    public UserDto save(UserDto user);
+     UserDto save(UserDto user);
 
     /**
      * Méthode pour recupérer tous les utilisateurs
      * @return
      */
-    public List<UserDto> findAll();
+     List<UserDto> findAll();
 
     /**
      * Méthode pour supprimer un utilisateur
      * @param id
      */
-    public void delete(Integer id);
+     void delete(Integer id);
 
     /**
      * Ajouter une liste des utilisateurs
      * @param userDtoList
      * @return
      */
-    public List<UserDto> addUsers(List<UserDto> userDtoList);
+     List<UserDto> addUsers(List<UserDto> userDtoList);
 
-    public Optional<User> loadUserByEmail(String email);
+     Optional<User> loadUserByEmail(String email);
+
+     UserDto addRoleToUser(String roleName, String email);
 }

@@ -39,4 +39,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     @Cacheable(value = USERS_BY_EMAIL_AND_ACTIVE_CACHE)
     Optional<User> findByEmailAndActiveTrue(String email);
+
+    Optional<User> findByEmail(String email);
 }
