@@ -1,8 +1,10 @@
 package com.ecommerce.autorisation.service;
 
 import com.ecommerce.autorisation.dto.UserDto;
+import com.ecommerce.autorisation.models.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface AccountService {
 
@@ -32,5 +34,5 @@ public interface AccountService {
      */
     public List<UserDto> addUsers(List<UserDto> userDtoList);
 
-    public UserDto loadUserByEmail(String email);
+    public Optional<User> loadUserByEmail(String email);
 }

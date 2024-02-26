@@ -2,6 +2,7 @@ package com.ecommerce.autorisation.service.impl;
 
 import com.ecommerce.autorisation.dto.UserDto;
 import com.ecommerce.autorisation.mappers.UserMapper;
+import com.ecommerce.autorisation.models.User;
 import com.ecommerce.autorisation.repository.AuthorityRepository;
 import com.ecommerce.autorisation.repository.UserRepository;
 import com.ecommerce.autorisation.service.AccountService;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -79,8 +81,8 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public UserDto loadUserByEmail(String email) {
-        return null;
+    public Optional<User> loadUserByEmail(String email) {
+        return userRepository.findByEmailAndActiveTrue(email);
     }
 
     private void encryptPassword(UserDto userDto) {
